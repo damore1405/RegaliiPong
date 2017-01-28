@@ -1,0 +1,19 @@
+<h1 class='page-header'>History</h1>
+
+<table class="table">
+	<tr>
+		<th>Date</th>
+		<th>Opponent</th>
+		<th>Score</th>
+		<th>Result</th>
+	</tr>
+	<% @player_history.each do |game| %>
+    	<tr>
+	        <td><%= game.game_date.strftime('%F') %></td>
+	        <td><%= game.opponent %></td>
+	        <td><%= game.player_score %> <-> <%= game.opponent_score %></td>
+	        <td><%= game.player_score || 0 > game.opponent_score || 0? "W" : "L"%></td>
+    	</tr>
+     <% end %> 
+</table>
+

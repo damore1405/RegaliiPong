@@ -1,0 +1,23 @@
+<h1 class='page-header'>Log Game</h1>
+
+<%= form_tag(controller: "home", action: "log", method: "post", class: "form-group") %>
+	<div>
+		<%= label_tag("Game date") %>
+		<%= date_field(:Game, :game_date) %>
+	</div>
+	<div>
+		<%= label_tag("Opponent") %>
+		<%= select("user", "opponent_name", User.all.collect {|p| [ p.email ] }, { include_blank: true }) %>
+	</div>
+	<div>
+		<%= label_tag("Your Score") %>
+		<%= number_field_tag(:PlayerScore, nil, in: 0...21) %>
+	</div>
+
+	<div>	
+		<%= label_tag("Their Score") %>
+		<%= number_field_tag(:OpponentScore, nil, in: 0...21) %>
+	</div>
+	<div>
+		<%= submit_tag("Submit") %>
+	</div>

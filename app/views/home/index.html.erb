@@ -1,0 +1,16 @@
+<h1 class='page-header'>Leaderboard</h1>
+<table class="table">
+	<tr>
+		<th>Username</th>
+		<th>Total Points</th>
+		<th>games played</th>
+	</tr>
+	<% @leaderboard.each do |leader| %>
+    	<tr>
+	        <td><%= leader[0].email %></td>
+	        <td><%= leader[1] %></td>
+	        <td><%= leader[2] %></td>
+    	</tr>
+     <% end %>
+</table>
+
